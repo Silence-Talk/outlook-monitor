@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.var/
+*.log
+.tmp*
+.workflows/
+
+# Real source-script registry holds this machine's absolute paths; commit the
+# example and keep the working copy local.
+sources.json

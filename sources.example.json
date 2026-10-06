@@ -1,0 +1,15 @@
+{
+  "_about": "Copy to sources.json at the project root. Each source is a script you already have. Two commands per source: `catalog` prints the option names the script accepts (one per line, optionally name<TAB>description, or JSON), `fetch` takes the chosen name and prints items (one per line, or JSON). Commands are argument lists, never shell strings, so a label the model picked can never become a shell command. The model chooses among exactly these names, which is why the catalog comes from the script and not from a hand-written list.",
+  "cisco": {
+    "description": "Cisco firewall: services and network events",
+    "catalog": ["python", "C:/path/to/your/firewall_script.py", "--list"],
+    "fetch": ["python", "C:/path/to/your/firewall_script.py", "--get", "{label}"],
+    "timeout": 30
+  },
+  "db": {
+    "description": "Database records relevant to a message",
+    "catalog": ["python", "C:/path/to/your/db_script.py", "--services"],
+    "fetch": ["python", "C:/path/to/your/db_script.py", "--query", "{label}"],
+    "format_note": "JSON out is preferred; plain lines work too"
+  }
+}
